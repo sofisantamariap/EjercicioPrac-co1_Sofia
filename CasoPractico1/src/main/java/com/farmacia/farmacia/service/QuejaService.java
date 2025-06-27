@@ -13,7 +13,7 @@ import java.util.List;
  */
 
 public interface QuejaService {
-    List<Queja> listarTodas();
-    void guardar(Queja queja);
+    
+     Queja guardar(Queja queja);
 }
 

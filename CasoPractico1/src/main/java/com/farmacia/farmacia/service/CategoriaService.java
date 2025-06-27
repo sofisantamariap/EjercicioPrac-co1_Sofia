@@ -11,11 +11,9 @@ import java.util.List;
  *
  * @author sofisantamaria
  */
-
-
 public interface CategoriaService {
-    List<Categoria> listarTodas();
-    Categoria obtenerPorId(Long id);
-    void guardar(Categoria categoria);
+    List<Categoria> listar();
+    Categoria guardar(Categoria categoria);
     void eliminar(Long id);
 }
+

@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
  *
  * @author sofisantamaria
  */
-
 @Repository
 public interface QuejaDao extends JpaRepository<Queja, Long> {
 }

@@ -4,8 +4,8 @@
  */
 package com.farmacia.farmacia.controllers;
 
-import com.farmacia.farmacia.domain.Producto;
-import com.farmacia.farmacia.service.ProductoService;
+import com.farmacia.farmacia.domain.Queja;
+import com.farmacia.farmacia.service.QuejaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,21 +18,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  * @author sofisantamaria
  */
-@Controller
-@RequestMapping("/productos")
-public class ProductoController {
-    @Autowired
-    private ProductoService productoService;
 
-    @GetMapping
-    public String listar(Model model) {
-        model.addAttribute("productos", productoService.listar());
-        return "productos";
+@Controller
+@RequestMapping("/quejas")
+public class QuejaController {
+
+    @Autowired
+    private QuejaService quejaService;
+
+    @GetMapping("/nueva")
+    public String mostrarFormulario(Model model) {
+        model.addAttribute("queja", new Queja());
+        return "formularioQueja";
     }
 
     @PostMapping("/guardar")
-    public String guardar(@ModelAttribute Producto producto) {
-        productoService.guardar(producto);
-        return "redirect:/productos";
+    public String guardarQueja(@ModelAttribute Queja queja) {
+        quejaService.guardar(queja);
+        return "redirect:/quejas/nueva?exito";
     }
 }

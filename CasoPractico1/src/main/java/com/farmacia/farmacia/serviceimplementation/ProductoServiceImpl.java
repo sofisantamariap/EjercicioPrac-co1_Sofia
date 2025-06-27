@@ -15,33 +15,23 @@ import org.springframework.stereotype.Service;
  *
  * @author sofisantamaria
  */
-
-
 @Service
 public class ProductoServiceImpl implements ProductoService {
-
     @Autowired
-    private ProductoDao productoDao;
+    private ProductoDao dao;
 
-    @Override
-    public List<Producto> listarTodos() {
-        return productoDao.findAll();
+    public List<Producto> listar() {
+        return dao.findAll();
     }
 
     @Override
-    public Producto obtenerPorId(Long id) {
-        return productoDao.findById(id).orElse(null);
-    }
-
-    @Override
-    public void guardar(Producto producto) {
-        productoDao.save(producto);
+    public Producto guardar(Producto producto) {
+        return dao.save(producto);
     }
 
     @Override
     public void eliminar(Long id) {
-        productoDao.deleteById(id);
+        dao.deleteById(id);
     }
 }
-
 

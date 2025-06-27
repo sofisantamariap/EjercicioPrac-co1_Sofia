@@ -13,8 +13,7 @@ import java.util.List;
  */
 
 public interface ProductoService {
-    List<Producto> listarTodos();
-    Producto obtenerPorId(Long id);
-    void guardar(Producto producto);
+    List<Producto> listar();
+    Producto guardar(Producto producto);
     void eliminar(Long id);
 }

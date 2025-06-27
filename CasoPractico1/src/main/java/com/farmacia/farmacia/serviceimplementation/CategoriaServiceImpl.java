@@ -4,11 +4,6 @@
  */
 package com.farmacia.farmacia.serviceimplementation;
 
-/**
- *
- * @author sofisantamaria
- */
-
 import com.farmacia.farmacia.dao.CategoriaDao;
 import com.farmacia.farmacia.domain.Categoria;
 import com.farmacia.farmacia.service.CategoriaService;
@@ -16,6 +11,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ *
+ * @author sofisantamaria
+ */
 @Service
 public class CategoriaServiceImpl implements CategoriaService {
 
@@ -23,18 +22,13 @@ public class CategoriaServiceImpl implements CategoriaService {
     private CategoriaDao categoriaDao;
 
     @Override
-    public List<Categoria> listarTodas() {
+    public List<Categoria> listar() {
         return categoriaDao.findAll();
     }
 
     @Override
-    public Categoria obtenerPorId(Long id) {
-        return categoriaDao.findById(id).orElse(null);
-    }
-
-    @Override
-    public void guardar(Categoria categoria) {
-        categoriaDao.save(categoria);
+    public Categoria guardar(Categoria categoria) {
+        return categoriaDao.save(categoria);
     }
 
     @Override
@@ -42,4 +36,3 @@ public class CategoriaServiceImpl implements CategoriaService {
         categoriaDao.deleteById(id);
     }
 }
-

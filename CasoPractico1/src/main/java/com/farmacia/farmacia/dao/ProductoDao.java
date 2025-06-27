@@ -12,8 +12,6 @@ import org.springframework.stereotype.Repository;
  *
  * @author sofisantamaria
  */
-
-
 @Repository
 public interface ProductoDao extends JpaRepository<Producto, Long> {
 }

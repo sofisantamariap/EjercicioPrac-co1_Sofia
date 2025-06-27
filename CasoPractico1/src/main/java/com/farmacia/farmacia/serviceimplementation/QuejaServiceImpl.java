@@ -7,7 +7,6 @@ package com.farmacia.farmacia.serviceimplementation;
 import com.farmacia.farmacia.dao.QuejaDao;
 import com.farmacia.farmacia.domain.Queja;
 import com.farmacia.farmacia.service.QuejaService;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,18 +16,14 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class QuejaServiceImpl implements QuejaService {
+public abstract class QuejaServiceImpl implements QuejaService {
 
     @Autowired
     private QuejaDao quejaDao;
 
-    @Override
-    public List<Queja> listarTodas() {
-        return quejaDao.findAll();
-    }
 
     @Override
-    public void guardar(Queja queja) {
-        quejaDao.save(queja);
+    public Queja guardar(Queja queja) {
+        return quejaDao.save(queja);
     }
 }
