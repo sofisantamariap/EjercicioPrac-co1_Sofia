@@ -31,8 +31,17 @@ public class CategoriaServiceImpl implements CategoriaService {
         return categoriaDao.save(categoria);
     }
 
+    /**
+     *
+     * @param id
+     */
     @Override
     public void eliminar(Long id) {
         categoriaDao.deleteById(id);
+    }
+
+     @Override
+    public Categoria buscarPorId(Long id) {
+        return categoriaDao.findById(id).orElse(null);
     }
 }

@@ -15,5 +15,8 @@ public interface CategoriaService {
     List<Categoria> listar();
     Categoria guardar(Categoria categoria);
     void eliminar(Long id);
+
+    public Categoria buscarPorId(Long id);
+    
 }
 
