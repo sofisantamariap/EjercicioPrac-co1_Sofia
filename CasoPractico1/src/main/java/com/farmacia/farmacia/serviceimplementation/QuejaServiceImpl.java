@@ -21,12 +21,11 @@ public class QuejaServiceImpl implements QuejaService {
     @Autowired
     private QuejaDao quejaDao;
 
-    public List<Queja> listar() {
-        return quejaDao.findAll();
-    }
-
+ 
     @Override
     public Queja guardar(Queja queja) {
         return quejaDao.save(queja);
     }
+
+    
 }
